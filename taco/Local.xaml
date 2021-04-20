@@ -1,0 +1,46 @@
+﻿<Window x:Class="taco.Local"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:taco"
+        mc:Ignorable="d"
+        Title="Taco Restaurant" Height="700" Width="1400">
+    <Grid x:Name="gfloor" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="tbox_host"  Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="GhostWhite" >
+        </ListBox>
+        <Image x:Name="img_host" Source="pack://application:,,,/Content/h1.png"  ToolTip="Click me to download report."  MouseLeftButtonDown="img_host_MouseRightButtonDown" Grid.Row="2" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="2"></Image>
+        <ListBox x:Name="fila"  Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" Grid.ColumnSpan="2" Background="GhostWhite" >
+            <ListBoxItem FontWeight="Bold" >Waiting List</ListBoxItem>
+        </ListBox>
+        <ListView x:Name="ltables" Grid.Row="0" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="4" Background="CadetBlue" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID Table" Width="80" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
+                    <GridViewColumn Header="# Chairs" Width="60" DisplayMemberBinding="{Binding Chairs}"></GridViewColumn>
+                    <GridViewColumn Header="Occupied" Width="85" DisplayMemberBinding="{Binding Busy}"></GridViewColumn>
+                    <GridViewColumn Header="# Persons in table" Width="100" DisplayMemberBinding="{Binding TakedChairs}"></GridViewColumn>
+                    <GridViewColumn Header="# Services" Width="80" DisplayMemberBinding="{Binding Nos}"></GridViewColumn>
+                    <GridViewColumn Header="# Attended People" Width="200" DisplayMemberBinding="{Binding Noap}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
